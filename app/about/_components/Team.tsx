@@ -1,3 +1,4 @@
+import { DEFAULT_IMAGE } from "@/constants";
 import {
   IconUsersGroup,
   IconUserCog,
@@ -53,7 +54,7 @@ export const Team = () => {
                 <Image
                   width={1000}
                   height={1000}
-                  src="/assets/images/user.webp"
+                  src={DEFAULT_IMAGE}
                   alt="Engineers on site"
                   className="rounded-2xl w-full h-64 object-cover shadow-lg"
                 />
@@ -71,8 +72,10 @@ export const Team = () => {
                     Industry Certified
                   </p>
                 </div>
-                <img
-                  src="/assets/images/user.webp"
+                <Image
+                  width={1000}
+                  height={1000}
+                  src={DEFAULT_IMAGE}
                   alt="Innovation team"
                   className="rounded-2xl w-full h-64 object-cover shadow-lg"
                 />

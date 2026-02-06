@@ -15,7 +15,7 @@ export const LubricantService = () => {
         <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
           {/* Right: Product/Manufacturing Imagery */}
           <div className="w-full lg:w-1/2 relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
               <Image
                 width={1000}
                 height={1000}

@@ -15,7 +15,7 @@ export const ExplorationService = () => {
         <div className="flex flex-col lg:flex-row items-center gap-10">
           {/* Left: Industrial Imagery with Stats Overlay */}
           <div className="w-full lg:w-1/2 relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-lg md:shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg md:shadow-2xl">
               <Image
                 width={1000}
                 height={1000}

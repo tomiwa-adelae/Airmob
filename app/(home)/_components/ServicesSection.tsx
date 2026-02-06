@@ -16,7 +16,7 @@ export const ServicesSection = () => {
       desc: "Manufacturing high-performance lubricants designed for smooth performance and long-lasting industrial protection.",
       icon: <Droplets className="w-6 h-6 text-blue-600" />,
       iconBg: "bg-blue-50",
-      image: "/assets/images/lubricant.jpg",
+      image: "/assets/images/lubricant-oil.jpg",
     },
     {
       title: "Industrial Energy Solutions",

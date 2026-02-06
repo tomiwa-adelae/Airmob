@@ -1,3 +1,4 @@
+import { DEFAULT_IMAGE } from "@/constants";
 import { IconBrandLinkedin, IconMail } from "@tabler/icons-react";
 import Image from "next/image";
 
@@ -5,28 +6,28 @@ const leaders = [
   {
     name: "Name Placeholder",
     role: "Managing Director / CEO",
-    image: "/assets/images/user.webp",
+    image: DEFAULT_IMAGE,
     bio: "Driving the strategic vision of AIRMOB with over 20 years of energy sector experience.",
     linkedin: "#",
   },
   {
     name: "Name Placeholder",
     role: "Technical Operations Director",
-    image: "/assets/images/user.webp",
+    image: DEFAULT_IMAGE,
     bio: "Specializing in precision drilling and digital oilfield integration.",
     linkedin: "#",
   },
   {
     name: "Name Placeholder",
     role: "Head of Lubricants & Manufacturing",
-    image: "/assets/images/user.webp",
+    image: DEFAULT_IMAGE,
     bio: "Expert in chemical engineering and high-performance industrial lubricants.",
     linkedin: "#",
   },
   {
     name: "Name Placeholder",
     role: "Director of Infrastructure (Forbliz)",
-    image: "/assets/images/user.webp",
+    image: DEFAULT_IMAGE,
     bio: "Leading civil works and mining operations across the subsidiary arm.",
     linkedin: "#",
   },

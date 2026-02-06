@@ -80,7 +80,7 @@ export const HSESection = () => {
             </div>
 
             {/* Safety Stat Card - The "Zero" Badge */}
-            <div className="absolute -bottom-6 left-2 sm:-left-6 bg-emerald-500 p-8 rounded-[2rem] shadow-[0_20px_40px_rgba(16,185,129,0.3)] z-20 border-4 border-[#040d0a] group hover:scale-105 transition-transform cursor-default">
+            <div className="absolute -bottom-6 left-2 sm:-left-6 bg-emerald-500 p-8 rounded-2xl shadow-[0_20px_40px_rgba(16,185,129,0.3)] z-20 border-4 border-[#040d0a] group hover:scale-105 transition-transform cursor-default">
               <div className="flex items-center gap-4">
                 <p className="text-6xl font-black text-white leading-none">0</p>
                 <IconActivity className="text-emerald-200/50 w-8 h-8 animate-bounce" />
