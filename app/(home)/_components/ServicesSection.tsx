@@ -28,7 +28,7 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-20 bg-slate-50">
+    <section className="py-16 md:py-20 bg-slate-50">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-3">

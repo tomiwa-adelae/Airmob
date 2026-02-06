@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const InnovationSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-[#040d0a] text-white overflow-hidden relative">
+    <section className="py-16 md:pb-30 lg:py-24 bg-[#040d0a] text-white overflow-hidden relative">
       {/* Background decoration: Changed to emerald/green blur */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-500/10 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-green-500/5 blur-[100px] rounded-full" />
@@ -80,7 +80,7 @@ export const InnovationSection = () => {
 
           {/* Right Side: Tech-focused Visual */}
           <div className="relative">
-            <div className="relative z-10 p-2 bg-emerald-500/10 rounded-3xl border border-white/10 backdrop-blur-sm">
+            <div className="relative z-10 p-2 bg-emerald-500/10 rounded-2xl border border-white/10 backdrop-blur-sm">
               <Image
                 height={1000}
                 width={1000}

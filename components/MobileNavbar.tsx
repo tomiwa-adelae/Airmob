@@ -82,7 +82,6 @@ export function MobileNavbar() {
 
         <ScrollArea className="overflow-y-auto">
           <div className="space-y-6">
-            {/* General Navigation */}
             <div>
               <p className="px-4 mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Menu
@@ -91,6 +90,11 @@ export function MobileNavbar() {
             </div>
           </div>
         </ScrollArea>
+        <SheetFooter className="mb-10">
+          <Button asChild>
+            <Link href="/contact">Contact us</Link>
+          </Button>
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
