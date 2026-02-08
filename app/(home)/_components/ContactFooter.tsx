@@ -5,11 +5,12 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
-import { ADDRESS, PHONE_NUMBER } from "@/constants";
+import { ADDRESS, EMAIL, PHONE_NUMBER } from "@/constants";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
   IconBrandLinkedin,
+  IconMail,
   IconPhone,
   IconSend,
 } from "@tabler/icons-react";
@@ -35,7 +36,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader } from "@/components/Loader";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  firstName: z
+    .string()
+    .min(2, { message: "First name must be at least 2 characters." }),
+  lastName: z
+    .string()
+    .min(2, { message: "Last name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   phone: z.string().min(10, { message: "Please enter a valid phone number." }),
   message: z
@@ -47,7 +53,8 @@ export const ContactFooter = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       message: "",
@@ -113,7 +120,25 @@ export const ContactFooter = () => {
                   </a>
                 </div>
               </div>
+              <div className="flex items-start gap-3 group">
+                <div className="w-12 h-12 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-emerald-500/20 transition-all">
+                  <IconMail className="text-emerald-400 size-5" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-emerald-50 text-sm uppercase tracking-wider mb-0.5">
+                    Email
+                  </h4>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="text-gray-400 hover:text-emerald-500 hover:underline text-sm"
+                  >
+                    {EMAIL}
+                  </a>
+                </div>
+              </div>
             </div>
+
+            {/* Email */}
 
             {/* Socials */}
             <div className="flex gap-3">
@@ -141,15 +166,15 @@ export const ContactFooter = () => {
                 <div className="grid md:grid-cols-2 gap-5">
                   <FormField
                     control={form.control}
-                    name="name"
+                    name="firstName"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-emerald-400/80">
-                          Name
+                          First name
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="John Doe"
+                            placeholder="e.g., Samuel "
                             {...field}
                             className="bg-white/5 border-white/10 focus-visible:ring-emerald-500"
                           />
@@ -160,15 +185,15 @@ export const ContactFooter = () => {
                   />
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="lastName"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-emerald-400/80">
-                          Email
+                          Last name
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="john@example.com"
+                            placeholder="e.g., Adeleke"
                             {...field}
                             className="bg-white/5 border-white/10 focus-visible:ring-emerald-500"
                           />
@@ -178,6 +203,25 @@ export const ContactFooter = () => {
                     )}
                   />
                 </div>
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-emerald-400/80">
+                        Email
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="samuel@example.com"
+                          {...field}
+                          className="bg-white/5 border-white/10 focus-visible:ring-emerald-500"
+                        />
+                      </FormControl>
+                      <FormMessage className="text-red-400 text-xs" />
+                    </FormItem>
+                  )}
+                />
 
                 <FormField
                   control={form.control}

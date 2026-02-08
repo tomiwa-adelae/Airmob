@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { articles } from "@/constants";
 import {
   IconClock,
   IconArrowUpRight,
@@ -8,46 +9,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const articles = [
-  {
-    category: "Technical",
-    date: "Feb 04, 2026",
-    title: "Optimizing Lubricant Viscosity for Tropical Industrial Climates",
-    excerpt:
-      "A deep dive into how AIRMOB's latest formula is extending machinery lifespan in high-heat environments.",
-    image: "/assets/images/AI.jpg",
-    readTime: "5 min read",
-    color: "blue",
-  },
-  {
-    category: "Corporate",
-    date: "Jan 28, 2026",
-    title: "AIRMOB Announces Strategic Expansion into Port Harcourt Hub",
-    excerpt:
-      "Increasing our upstream support footprint to better serve our partners in the Niger Delta region.",
-    image: "/assets/images/AI.jpg",
-    readTime: "3 min read",
-    color: "emerald",
-  },
-  {
-    category: "Innovation",
-    date: "Jan 15, 2026",
-    title: "Integrating AI in Drilling: The 2026 Efficiency Roadmap",
-    excerpt:
-      "How predictive analytics is reducing operational downtime by 22% across our support sites.",
-    image: "/assets/images/AI.jpg",
-    readTime: "7 min read",
-    color: "orange",
-  },
-];
-
 export const NewsGrid = () => {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container">
         {/* 1. Featured Article (The Big Story) */}
         <Link
-          href="/news/first"
+          href={`/news/featured`}
           className="relative group cursor-pointer mb-10 overflow-hidden rounded-2xl bg-slate-900 min-h-[500px] flex items-end"
         >
           <Image
@@ -62,7 +30,7 @@ export const NewsGrid = () => {
           <div className="relative z-10 p-6 md:p-10 max-w-3xl">
             <Badge>Featured Report</Badge>
             <Link
-              href="/news/first"
+              href={`/news/featured`}
               className="text-white hover:underline text-2xl md:text-3xl font-extrabold mt-3 mb-2.5 group-hover:text-primary transition-colors line-clamp-2"
             >
               AIRMOB Achieves ISO 9001 Certification for Lubricant
@@ -87,7 +55,7 @@ export const NewsGrid = () => {
         <div className="grid md:grid-cols-3 gap-x-6 gap-y-10">
           {articles.map((post, index) => (
             <div key={index} className="group cursor-pointer">
-              <Link href={"/news/first"}>
+              <Link href={`/news/${post.slug}`}>
                 <div className="relative aspect-video mb-6 overflow-hidden rounded-2xl">
                   <Image
                     width={1000}
@@ -112,7 +80,7 @@ export const NewsGrid = () => {
               </div>
 
               <Link
-                href="/news/first"
+                href={`/news/${post.slug}`}
                 className="text-xl font-bold text-slate-900 mb-1.5 group-hover:text-primary hover:underline transition-colors leading-tight"
               >
                 {post.title}
@@ -122,7 +90,7 @@ export const NewsGrid = () => {
               </p>
 
               <Button asChild variant={"secondary"} className="w-full">
-                <Link href={"/news/first"}>Read Article</Link>
+                <Link href={`/news/${post.slug}`}>Read Article</Link>
               </Button>
             </div>
           ))}

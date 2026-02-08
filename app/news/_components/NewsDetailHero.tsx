@@ -46,12 +46,15 @@ export const NewsDetailHero = ({
               <IconClock size={18} className="text-primary" />
               <span>{readTime}</span>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 text-xs font-bold">
-                {author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
+            <div className="flex items-center gap-0.5">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                <Image
+                  src={"/assets/images/logo.png"}
+                  width={1000}
+                  height={1000}
+                  alt="AIRMOB LOGO"
+                  className="object-cover size-full"
+                />
               </div>
               <span className="text-sm font-bold text-slate-900 italic">
                 By {author}

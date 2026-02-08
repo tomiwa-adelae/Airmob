@@ -54,9 +54,9 @@ export const Team = () => {
                 <Image
                   width={1000}
                   height={1000}
-                  src={DEFAULT_IMAGE}
+                  src={"/assets/images/cac.jpeg"}
                   alt="Engineers on site"
-                  className="rounded-2xl w-full h-64 object-cover shadow-lg"
+                  className="rounded-2xl w-full h-64 object-top object-cover shadow-lg"
                 />
                 <div className="bg-emerald-800 p-6 md:p-8 rounded-2xl text-white">
                   <p className="text-2xl md:text-3xl font-bold mb-1">100%</p>
@@ -75,7 +75,7 @@ export const Team = () => {
                 <Image
                   width={1000}
                   height={1000}
-                  src={DEFAULT_IMAGE}
+                  src={"/assets/images/engineer.jpg"}
                   alt="Innovation team"
                   className="rounded-2xl w-full h-64 object-cover shadow-lg"
                 />

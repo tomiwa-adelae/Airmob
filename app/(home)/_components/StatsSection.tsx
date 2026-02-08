@@ -8,7 +8,7 @@ import {
 const stats = [
   {
     label: "Years of Excellence",
-    value: "15+",
+    value: "7+",
     icon: IconTrophy,
     description: "Consistent growth in the energy sector.",
   },

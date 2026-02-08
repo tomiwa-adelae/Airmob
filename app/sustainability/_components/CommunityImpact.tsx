@@ -14,7 +14,7 @@ export const CommunityImpact = () => {
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <img
-                src={DEFAULT_IMAGE}
+                src={"/assets/images/engineer.jpg"}
                 alt="Nigerian Engineers in training"
                 className="rounded-2xl w-full h-64 object-cover shadow-lg"
               />
@@ -33,7 +33,7 @@ export const CommunityImpact = () => {
                 </p>
               </div>
               <img
-                src={DEFAULT_IMAGE}
+                src={"/assets/images/energy-infrastructure.jpg"}
                 alt="Community development"
                 className="rounded-2xl w-full h-80 object-cover shadow-lg"
               />

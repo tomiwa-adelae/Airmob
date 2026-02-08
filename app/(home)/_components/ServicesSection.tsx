@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Droplets, Drill, Factory } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const ServicesSection = () => {
   const services = [
@@ -10,6 +11,7 @@ export const ServicesSection = () => {
       icon: <Drill className="w-6 h-6 text-orange-600" />,
       iconBg: "bg-orange-50",
       image: "/assets/images/drilling.jpg",
+      slug: "/solutions/#exploration-support",
     },
     {
       title: "Lubricant Production",
@@ -17,6 +19,7 @@ export const ServicesSection = () => {
       icon: <Droplets className="w-6 h-6 text-blue-600" />,
       iconBg: "bg-blue-50",
       image: "/assets/images/lubricant-oil.jpg",
+      slug: "/solutions/#lubricant-production",
     },
     {
       title: "Industrial Energy Solutions",
@@ -24,6 +27,7 @@ export const ServicesSection = () => {
       icon: <Factory className="w-6 h-6 text-slate-600" />,
       iconBg: "bg-slate-100",
       image: "/assets/images/storage.jpg",
+      slug: "/solutions/#industrial-services",
     },
   ];
 
@@ -81,8 +85,9 @@ export const ServicesSection = () => {
                 <Button
                   variant="outline"
                   className="w-full group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  asChild
                 >
-                  Learn More
+                  <Link href={service.slug}>Learn More</Link>
                 </Button>
               </div>
             </div>
