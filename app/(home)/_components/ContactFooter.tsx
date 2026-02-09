@@ -34,6 +34,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader } from "@/components/Loader";
+import { toast } from "sonner";
+import { useTransition } from "react";
 
 const formSchema = z.object({
   firstName: z
@@ -50,6 +52,8 @@ const formSchema = z.object({
 });
 
 export const ContactFooter = () => {
+  const [pending, startTransition] = useTransition();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -63,10 +67,28 @@ export const ContactFooter = () => {
 
   // 2. Define Submit Handler
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // You can call your API route here
-    alert("Message sent successfully!");
-    form.reset();
+    startTransition(async () => {
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) throw new Error(data.error || "Submission failed");
+
+        toast.success("Message Sent", {
+          description: "An AIRMOB representative will reach out shortly.",
+        });
+        form.reset();
+      } catch (error: any) {
+        toast.error("Error", {
+          description: error.message || "Failed to connect to the server.",
+        });
+      }
+    });
   }
 
   return (
@@ -264,10 +286,10 @@ export const ContactFooter = () => {
                 />
 
                 <Button
-                  disabled={form.formState.isSubmitting}
+                  disabled={form.formState.isSubmitting || pending}
                   className="w-full"
                 >
-                  {form.formState.isSubmitting ? (
+                  {form.formState.isSubmitting || pending ? (
                     <Loader text="Sending..." />
                   ) : (
                     "Send Message"

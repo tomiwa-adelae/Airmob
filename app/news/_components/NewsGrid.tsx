@@ -1,3 +1,4 @@
+import { ComingSoon } from "@/components/ComingSoon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { articles } from "@/constants";
@@ -11,10 +12,11 @@ import Link from "next/link";
 
 export const NewsGrid = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 relative md:py-24 bg-white">
+      <ComingSoon />
       <div className="container">
         {/* 1. Featured Article (The Big Story) */}
-        <Link
+        {/* <Link
           href={`/news/featured`}
           className="relative group cursor-pointer mb-10 overflow-hidden rounded-2xl bg-slate-900 min-h-[500px] flex items-end"
         >
@@ -49,7 +51,7 @@ export const NewsGrid = () => {
               </span>
             </div>
           </div>
-        </Link>
+        </Link> */}
 
         {/* 2. Regular News Grid */}
         <div className="grid md:grid-cols-3 gap-x-6 gap-y-10">

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import Head from "next/head";
 import { ContactFooter } from "./(home)/_components/ContactFooter";
+import { Toaster } from "sonner";
 
 const outfits = Outfit({
   subsets: ["latin"],
@@ -87,6 +88,7 @@ export default function RootLayout({
       </Head>
       <body className={`${outfits.className} antialiased`}>
         <Header />
+        <Toaster />
         <div className="pt-20">{children}</div>
         <ContactFooter />
       </body>

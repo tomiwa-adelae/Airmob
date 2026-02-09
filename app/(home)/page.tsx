@@ -15,7 +15,7 @@ const page = () => {
       <StatsSection />
       <ServicesSection />
       <InnovationSection />
-      <HomeNewsSection />
+      {/* <HomeNewsSection /> */}
       <SubsidiarySection />
     </div>
   );

@@ -1,11 +1,66 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+
 import {
   IconFileDownload,
   IconMessageDots,
   IconArrowRight,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { ProposalFormValues, proposalSchema } from "@/lib/validations/proposal";
+import { toast } from "sonner";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useTransition } from "react";
+import { Loader } from "@/components/Loader";
+import { ComingSoon } from "@/components/ComingSoon";
 
 export const TechnicalResources = () => {
+  const [pending, startTransition] = useTransition();
+  const form = useForm<ProposalFormValues>({
+    resolver: zodResolver(proposalSchema),
+    defaultValues: {
+      fullName: "",
+      email: "",
+      businessLine: "",
+      details: "",
+    },
+  });
+
+  async function onSubmit(data: ProposalFormValues) {
+    startTransition(async () => {
+      const response = await fetch("/api/proposals", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      console.log(response);
+
+      if (response.ok) {
+        toast.success("Proposal submitted to the engineering team.");
+        form.reset();
+      }
+    });
+  }
+
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container">
@@ -22,7 +77,8 @@ export const TechnicalResources = () => {
               </p>
             </div>
 
-            <div className="grid gap-2.5">
+            <div className="relative grid gap-2.5">
+              <ComingSoon />
               {[
                 { name: "Industrial Lubricant TDS", size: "1.2 MB" },
                 { name: "Upstream Support Capability", size: "2.4 MB" },
@@ -71,26 +127,115 @@ export const TechnicalResources = () => {
                 your requirements and provide a detailed operational framework.
               </p>
 
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                />
-                <select className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-slate-400 focus:outline-none focus:border-blue-500 transition-colors">
-                  <option>Select Business Line</option>
-                  <option>Exploration Support</option>
-                  <option>Lubricant Production</option>
-                  <option>Industrial Solutions</option>
-                </select>
-                <textarea
-                  rows={3}
-                  placeholder="Project Details"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                ></textarea>
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-4"
+                >
+                  <FormField
+                    control={form.control}
+                    name="fullName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-emerald-400/80">
+                          Name
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="e.g., Samuel Adeleke "
+                            {...field}
+                            className="bg-white/5 border-white/10 focus-visible:ring-emerald-500"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-400 text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-emerald-400/80">
+                          Email
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="samuel@example.com"
+                            {...field}
+                            className="bg-white/5 border-white/10 focus-visible:ring-emerald-500"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-400 text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="businessLine"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-emerald-400/80">
+                          Select Business Line
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger className="bg-white/5 border-white/10 focus-visible:ring-emerald-500">
+                              <SelectValue placeholder="Select business line" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Exploration Support">
+                              Exploration Support
+                            </SelectItem>
+                            <SelectItem value="Lubricant Production">
+                              Lubricant Production
+                            </SelectItem>
+                            <SelectItem value="Industrial Solutions">
+                              Industrial Solutions
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="details"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-emerald-400/80">
+                          Details
+                        </FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="How can we help you?"
+                            className="bg-white/5 border-white/10 focus-visible:ring-emerald-500"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-400 text-xs" />
+                      </FormItem>
+                    )}
+                  />
 
-                <Button className="w-full">Send Inquiry</Button>
-              </form>
+                  <Button
+                    disabled={form.formState.isSubmitting || pending}
+                    className="w-full"
+                  >
+                    {" "}
+                    {form.formState.isSubmitting || pending ? (
+                      <Loader text="Sending..." />
+                    ) : (
+                      "Send Inquiry"
+                    )}
+                  </Button>
+                </form>
+              </Form>
             </div>
           </div>
         </div>

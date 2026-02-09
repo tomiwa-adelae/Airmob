@@ -78,90 +78,6 @@ export const articles = [
     color: "blue",
   },
   {
-    slug: "strategic-expansion-port-harcourt",
-    category: "Corporate",
-    date: "Jan 28, 2026",
-    title: "AIRMOB Announces Strategic Expansion into Port Harcourt Hub",
-    excerpt:
-      "Increasing our upstream support footprint to better serve our partners in the Niger Delta region.",
-    content:
-      "Strategically located to support the growing upstream activities, our new Port Harcourt facility will reduce logistics lead times by 40% for our regional partners...",
-    image: "/assets/images/AI.jpg",
-    readTime: "3 min read",
-    author: "Corporate Communications",
-    color: "emerald",
-  },
-  {
-    slug: "ai-in-drilling-2026",
-    category: "Innovation",
-    date: "Jan 15, 2026",
-    title: "Integrating AI in Drilling: The 2026 Efficiency Roadmap",
-    excerpt:
-      "How predictive analytics is reducing operational downtime by 22% across our support sites.",
-    content:
-      "Artificial Intelligence is no longer a buzzword in oil and gas. We are deploying neural networks to predict drill bit failure before it occurs...",
-    image: "/assets/images/AI.jpg",
-    readTime: "7 min read",
-    author: "Tech Lead, AIRMOB",
-    color: "orange",
-  },
-  {
-    slug: "local-content-empowerment",
-    category: "Community",
-    date: "Jan 05, 2026",
-    title: "Empowering 500+ Local Engineers Through Skill Acquisition",
-    excerpt:
-      "AIRMOB's commitment to the NCDMB mandate through specialized technical training programs.",
-    content:
-      "Sustainability is about people. Our 2026 graduate trainee program has officially kicked off with a focus on deep-water engineering protocols...",
-    image: "/assets/images/AI.jpg",
-    readTime: "6 min read",
-    author: "HR Directorate",
-    color: "rose",
-  },
-  {
-    slug: "iso-9001-certification",
-    category: "Quality",
-    date: "Dec 20, 2025",
-    title: "Achieving ISO 9001:2015: A Milestone in Quality Management",
-    excerpt:
-      "Standardizing our manufacturing processes to meet global excellence benchmarks.",
-    content:
-      "This certification validates our rigorous internal audits and our commitment to providing only the highest grade of industrial chemicals...",
-    image: "/assets/images/AI.jpg",
-    readTime: "4 min read",
-    author: "Quality Assurance Team",
-    color: "blue",
-  },
-  {
-    slug: "future-of-offshore-logistics",
-    category: "Operations",
-    date: "Dec 12, 2025",
-    title: "The Future of Offshore Logistics in the Gulf of Guinea",
-    excerpt:
-      "Overcoming maritime challenges with integrated supply chain solutions.",
-    content:
-      "Security and efficiency remain the two pillars of offshore success. AIRMOB is introducing drone-assisted surveillance for supply vessels...",
-    image: "/assets/images/AI.jpg",
-    readTime: "8 min read",
-    author: "Logistics Manager",
-    color: "slate",
-  },
-  {
-    slug: "renewable-energy-integration",
-    category: "Sustainability",
-    date: "Nov 30, 2025",
-    title: "Hybrid Energy: Integrating Solar in Remote Drilling Sites",
-    excerpt:
-      "Reducing carbon footprints by transitioning auxiliary power to renewable sources.",
-    content:
-      "Our pilot project in the western region has shown a 15% reduction in diesel consumption by utilizing solar-battery hybrids for site lighting...",
-    image: "/assets/images/AI.jpg",
-    readTime: "5 min read",
-    author: "Sustainability Officer",
-    color: "emerald",
-  },
-  {
     slug: "safety-first-hse-milestones",
     category: "HSE",
     date: "Nov 15, 2025",
@@ -188,19 +104,5 @@ export const articles = [
     readTime: "10 min read",
     author: "Technical Specialist",
     color: "blue",
-  },
-  {
-    slug: "market-outlook-2026",
-    category: "Market News",
-    date: "Oct 10, 2025",
-    title: "2026 West African Energy Market Outlook",
-    excerpt:
-      "Analyzing the trends, risks, and opportunities in the regional energy landscape.",
-    content:
-      "With new refineries coming online, the midstream sector in Nigeria is set for a massive transformation over the next 12 months...",
-    image: "/assets/images/AI.jpg",
-    readTime: "12 min read",
-    author: "Strategic Analyst",
-    color: "slate",
   },
 ];

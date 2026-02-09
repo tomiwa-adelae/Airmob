@@ -13,7 +13,7 @@ const stats = [
     description: "Consistent growth in the energy sector.",
   },
   {
-    label: "Projects Completed",
+    label: "Projects to be completed",
     value: "250+",
     icon: IconSettingsAutomation,
     description: "Successful upstream & midstream deliveries.",
