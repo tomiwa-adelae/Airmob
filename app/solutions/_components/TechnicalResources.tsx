@@ -62,7 +62,7 @@ export const TechnicalResources = () => {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id="technical-proposal" className="py-16 md:py-24 bg-white">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Left: Document Downloads */}
