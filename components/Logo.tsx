@@ -1,14 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const Logo = ({ color = "white" }: { color: "white" | "black" }) => {
   return (

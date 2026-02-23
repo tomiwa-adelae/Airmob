@@ -56,12 +56,12 @@ export const SubsidiarySection = () => {
                 logistics. We translate energy potential into physical progress.
               </p>
 
-              {/* <Button disabled variant={"white"}>
+              <Button asChild disabled variant={"white"}>
                 <a target="_blank" href="https://forbliz.com/">
-                Visit Forbliz.com
-                <IconExternalLink />
+                  Visit Forbliz
+                  <IconExternalLink />
                 </a>
-              </Button> */}
+              </Button>
             </div>
 
             {/* Right Column: Feature Grid & Visual */}
